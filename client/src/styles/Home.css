@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+:root{
+    --max-width:1440px;
+    --background:#fafafa;
+    --foreground:black;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color:var(--foreground);
+    font-family:"Space Grotesk", sans-serif;
+    -webkit-font-smoothing:antialiased;
+    font-weight:400;
+
+    
+}
+html,body{
+    background:var(--background);
+    overscroll-behavior:none;
+    width:100%;
+    height:100%;
+
+}
+
+
+.line_container{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100%;
+    left:50%;
+    transform:translate(-50%);
+    max-width: var(--max-width);
+    overflow:hidden ;
+    
+}
+
+.separator{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: rgba(114, 114, 114, 0.507);
+    z-index:999;
+    
+}
+
+.separator:nth-child(1){
+    left: 25%
+}
+
+.separator:nth-child(2){
+    left: 50%
+}
+
+.separator:nth-child(3){
+    left: 75%
+}
+
+main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+}
+
+.scroll_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* HERO SECTION */
+
+#hero{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:100%;
+    width:100%;
+}
+
+.hero_container{
+    height:100%;
+    width:100%;
+    max-width:(var(--max-width));
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column; 
+    gap:80px;
+} 
+
+.overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:1px solid black;
+    border-radius:50%;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  .hero_cta:hover .overlay {
+    opacity: 1; /* Fade in when container is hovered */
+  }
+  
+.hero_title{
+    overflow:hidden;
+} 
+.hero_title h1{
+    overflow:hidden;
+}
+/* cqi stands for container querry inline-size 1cqi == 1% of */
+.hero_title_header{
+    font-size:clamp(2rem,30cqi,25rem);
+    letter-spacing:-0.05rem;
+    margin-bottom:2rem;
+}
+
+
+
+/* About section */
+#about{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.about_container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width:100%;
+    max-width: var(--max-width);
+    height:100%;
+}
+
+.about_text{
+    width:45%;
+    margin:auto;
+    text-align:center;
+    text-transform:uppercase;
+    text-wrap:balance;
+    font-size:1.5rem;
+    letter-spacing:-0.05rem;
+}
+
+/* Video */
+#video{
+    display:flex;
+    justify-content: center;
+    height:200%;
+
+
+
+}
+.video_sticky{
+
+    position:sticky;
+    top:0;
+    width:100%;
+    height:50%;
+
+
+}
+.shim{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    background: transparent  ;
+}
+
+.main_video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0; 
+    object-fit:cover;
+    transform:scale(0.5);
+    will-change:transform;
+}
+
+.video_text_overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50% , -50%);
+    width:100%;
+    display:flex;
+    justify-content:center;
+    font-size: clamp(2rem, 10cqi, 10rem);
+    overflow:hidden;
+}
+
+
+/* Projects */
+
+#projects{
+    position:relative;
+    height:200%;
+
+}
+
+.projects_sticky{
+
+    top:0;
+    width:100%;
+    height:50%;
+
+} 
+
+.slider_container{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.projects_slider{
+    height:100%;
+    display:flex;
+    width:min-content;
+    will-change:transform;
+    overflow:hidden ; 
+
+}
+
+
+.project{
+    position:relative;
+    width:25vw;
+    height:100%;
+    padding:80px 20px 60px;
+    display:flex;
+    flex-direction:column;
+}
+
+.image_container{
+    position: relative;
+    width:100%;
+    aspect-ratio: 16/9;
+    overflow:hidden;
+}
+.project_image{
+    position:relative;
+    width:100%; 
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    filter:grayscale(50%);
+}
+.start{
+    justify-content:start
+}
+.mid{
+    justify-content:center;
+}
+.end{
+    justify-content:end;
+}
+.project_details{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    padding-top:1rem;
+
+}
+.project_details p{
+
+}
+
+/* Blog */
+
+#blog{
+    height:400%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.blog_hero, .blog_post{
+
+    width:90%;
+    height:25%;                 /* this is 100vh */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:sticky;
+    top:0;
+    max-width: var(--max-width);
+    overflow:hidden;
+
+}
+.blog_post{
+
+}
+
+.text_reveal{
+    overflow:hidden;
+    line-height: 1;
+    font-size:clamp(2rem,20cqi,20rem);   
+}
+.post{
+    position:relative;
+    width:50%;
+    padding:1rem;
+    background-color: rgba(255, 255, 255, 0.057);
+    backdrop-filter:blur(5px);
+    --webkit-backdrop-filter:blur(5x); 
+    will-change:transform;
+}
+.post_image_container{
+    overflow:hidden;
+    position:relative;
+    width:90%;
+    height: 90%;
+    object-fit:cover;
+    border-radius:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog_post_image{
+    position:relative;
+    height:90%;
+    width:90%;
+    object-fit:cover;
+    object-position:center;
+}
+.post_details{
+    display:flex;
+    width:100%;
+    margin-top:1rem;
+    justify-content:space-between;
+}
+
+.post_details p{
+    font-size:.8rem;
+}
+
+
+/* Circle Section */
+
+#circle_section{
+    position:relative;
+    height: 200%;
+  
+
+}
+
+.circle_sticky{
+    position:sticky;
+    top:0;
+    width:100%;
+    height:50%;  /* it is 50% of 200% = 100% */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_container{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+/* "x vmax" here takes x% of the greater of the (height and width) */
+.circle_home{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:150vmax;
+    height:150vmax;
+    background: var(--foreground); 
+    border-radius:50%;
+}
+.circle_sticky h2{
+    font-size:clamp(2rem,15cqi, 20rem);
+    color:var(--background);
+    z-index:1;
+}
+
+/* Discover */
+
+#discover{
+    background: var(--foreground);
+    height:100%;
+
+}
+
+.discover_container{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+   
+    overflow:hidden;
+}
+
+.discover_container p{
+    color:var(--background);
+    font-size:clamp(1rem,2cqw,10rem);
+    will-change:transform; 
+}
+.discover_button{
+    color:var(--background);
+    font-size:clamp(1rem,2cqw,10rem);
+    border-left:2px solid var(--background);
+    border-right:2px solid var(--background);
+    border-radius:10px;
+    padding-inline:10px;
+}
+
+/* End video */
+
+#end_video{
+    background: var(--foreground);
+    position:relative;
+    display:flex;
+    justify-content: center;
+    height:100%;
+}
+
+.end_video_container{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.end_video{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Footer */
+
+#footer{
+    height:50%;
+    background: var(--foreground);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.footer_container{
+    width:100%;
+    display:flex;
+    max-width: var(--max-width);
+    justify-content: center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.footer_title h2 span{
+
+    color:var(--background);
+    display:inline-block;
+    overflow:hidden;
+     
+}
+
+span{
+    display:inline-block;
+    overflow:hidden;
+    line-height: 1;
+}
+@media only screen and (max-width: 1100px){
+    p{
+        font-size: .8rem;
+    }
+
+    /* #projects{
+        height: 400%;
+    }
+
+    .projects__sticky{
+        height: 25%;
+    }
+
+    .project {
+        width: 50vw;
+    } */
+}
+
+@media only screen and (max-width: 600px){
+    /* #projects{
+        height: 800%;
+    }
+
+    .projects__sticky{
+        height: 12.5%;
+    }
+
+    .project {
+        width:100vw ;
+    }
+    */
+    .post{
+        width: 80%;
+    } 
+}

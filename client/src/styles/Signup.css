@@ -1,0 +1,12 @@
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+
+.heading{
+    font-size:clamp(2rem,5cqi,3rem);
+}

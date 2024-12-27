@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    scroll-behavior: smooth;
+    color:black;
+}
+.otp-inp input{
+    background: #a29a83;
+    color:white;
+    border-radius:50%;
+    border:1px dotted black;
+}
+
+.sidebar-scroll::-webkit-scrollbar{
+    width: 5px;
+}
+
+input,textarea{
+  outline:none;
+}
+.que:hover .addBtn{
+  display:block;
+}
+
+.slider{
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height:8px;
+  border-radius:20px;
+  border: 1px solid #00BBFF;
+}
+
+.slider::-webkit-slider-thumb{
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(190, 190, 190, 0.779);
+  height: 18px;
+  width: 18px;
+  padding:5px;
+  border-radius:50%;
+  cursor: pointer;
+
+}
+
+.template_hero{
+  background-image:url("./assets/hero-bg.webp");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.settings_scrollbar:hover .arrow_right{
+  transform:translateX(5px);
+  transition:all 0.2s ease-in-out 0s;
+}
+
+td{
+  padding:10px;
+}
+
+.preview_que_options{
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px, rgba(0, 0, 0, 0.06) 0px 2px 12px, rgba(0, 0, 0, 0.04) 0px 8px 14px, rgba(0, 0, 0, 0.02) 0px 12px 16px;
+}
+
+tr{
+  margin-block:10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+.color_input{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+/* Style the custom radio button */
+.custom-radio {
+  display: inline-block;
+  background: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #000000; /* Border color */
+  position: relative;
+  margin-right: 5px;
+}
+
+/* Style the inner dot of the radio button when it's checked */
+.custom-radio::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000000d3; /* Dot color */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Hide the dot by default */
+}
+
+/* Show the inner dot when the radio button is checked */
+input[type="radio"]:checked + .custom-radio::after {
+  opacity: 1;
+}
+
+.sidebar-container{
+  height: calc(100vh - 54px);
+}
+.pulsating-circle {
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  
+  &:before {
+    content: '';
+    position: relative;
+    display: block;
+    width: 300%;
+    height: 300%;
+    box-sizing: border-box;
+    margin-left: -100%;
+    margin-top: -100%;
+    border-radius: 45px;
+    background-color: #01a4e9;
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0; 
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+    animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+  }
+}
+
+.result_table th,td{
+  padding:15px;
+  padding-right:40px;
+  padding-bottom: 0;
+  padding-left:0
+}
+
+.bot_cross{
+  transition:all;
+  transition-duration:0.2s;
+
+}
+
+.bot_cross_cont:hover .bot_cross{
+  fill:black
+}
+
+.form_card{
+  box-shadow:rgba(0, 0, 0, 0.08) 0px 2px 4px, rgba(0, 0, 0, 0.06) 0px 2px 12px;
+  
+}
+.form_card:hover{
+  box-shadow:rgba(0, 0, 0, 0.191) 0px 2px 10px, rgba(0, 0, 0, 0.06) 0px 2px 16px;
+
+}
+
+.swiper-wrapper {
+  display:flex;
+  align-items:center;
+
+}
+
+.share-form iframe{
+  width:90%
+}
+.que_card{
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: contrast(100%) brightness(105%);
+}
+
+#square-container{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  box-sizing: border-box;
+  overflow:hidden;
+  z-index: 100000;
+
+}
+
+.square{
+  width:100px;
+  height:100px;
+  background: #000;
+  box-sizing:border-box;
+  pointer-events: none;
+}
+.showcase-base:hover .showcase-overlay{
+  background-color: red;
+  top:0%;
+}
+
+.blurItem-1{
+  animation-name: blurEffect;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+.blurItem-2{
+  animation-name: blurEffect2;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+@keyframes blurEffect{
+  from{
+    transform:translate(-20%, -20%);
+  }
+  to{
+    transform:translate(0%,0%);
+  }
+}
+@keyframes blurEffect2{
+  from{
+    transform:translateX(-15%);
+  }
+  to{
+    transform:translateX(0%);
+  }
+}
+
+@media screen and (min-width:1024px){
+
+  .preview-main{
+    width:calc(100vw - 512px);
+
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(.8);
+  }
+}
